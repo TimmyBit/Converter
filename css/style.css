@@ -5,7 +5,7 @@
 }
 
 :root {
-  --theme-color: #0077ff;
+    --theme-color: #0077ff;
 }
 
 body {
@@ -37,18 +37,18 @@ body {
 
 
 #top {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px 0;
-  position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
 }
 
 #top h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 #top select {
@@ -74,13 +74,13 @@ nav {
 }
 
 .option:hover {
-  cursor: pointer;
-  color: var(--theme-color);
+    cursor: pointer;
+    color: var(--theme-color);
 }
 
 .bottom-theme {
-  border-bottom: 3px solid var(--theme-color);
-  border-radius: 2px;
+    border-bottom: 3px solid var(--theme-color);
+    border-radius: 2px;
 }
 
 section {
@@ -96,22 +96,25 @@ section {
     justify-content: space-evenly;
 }
 
-.to, .from {
+.to,
+.from {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
 
-.to input, .from input {
-    background: transparent; 
+.to input,
+.from input {
+    background: transparent;
     color: #fff;
     text-align: center;
     font-size: 1.5rem;
     width: 400px;
 }
 
-.to select, .from select {
+.to select,
+.from select {
     font-size: 1.5rem;
     width: 200px;
     text-align: center;
@@ -121,6 +124,49 @@ section {
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+    #top {
+        flex-direction: column;
+        position: relative;
+        gap: 20px;
+    }
+    
+    #top h1 {
+        position: static;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    #top select {
+        margin: 0;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    section {
+        margin-top: 70px;
+    }
+
+    .measurement.active {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .measurement.active input {
+        width: 350px; 
+    }
+
+    .to,
+    .from {
+        gap: 15px;
+    }
 }

@@ -12,6 +12,11 @@ const inputLength1 = document.querySelector('#length .from input');
 const inputLength2 = document.querySelector('#length .to input');
 const inputVolume1 = document.querySelector('#volume .from input');
 const inputVolume2 = document.querySelector('#volume .to input');
+const toInput = document.querySelectorAll('.to input');
+
+toInput.forEach((input) => {
+    input.disabled = true;
+});
 
 // Temperature convert
 const convertTemperature = () => {
@@ -33,36 +38,35 @@ const convertWeight = () => {
     if (select1.value === 'Pounds') {
         inputWeight2.value = (inputWeight1.value * 453.59237).toFixed(2);
     } else {
-        inputWeight2.value = (inputWeight1.value / 453.59237).toFixed(2)
+        inputWeight2.value = (inputWeight1.value / 453.59237).toFixed(2);
     }
 
     if (inputWeight1.value === '') inputWeight2.value = '';
 };
 
-
 // Length convert
 const convertLength = () => {
     const select1 = document.querySelector('#length-select-from');
-    
+
     if (select1.value === 'Inches') {
         inputLength2.value = (inputLength1.value * 2.54).toFixed(1);
     } else {
         inputLength2.value = (inputLength1.value / 2.54).toFixed(1);
     }
-    
+
     if (inputLength1.value === '') inputLength2.value = '';
 };
 
 // Volume convert
 const convertVolume = () => {
     const select1 = document.querySelector('#volume-select-from');
-    
+
     if (select1.value === 'Ounces') {
         inputVolume2.value = (inputVolume1.value * 29.5735).toFixed(1);
     } else {
         inputVolume2.value = (inputVolume1.value / 29.5735).toFixed(1);
     }
-    
+
     if (inputVolume1.value === '') inputVolume2.value = '';
 };
 
@@ -160,4 +164,4 @@ inputTemp1.addEventListener('input', () => convertTemperature());
 inputWeight1.addEventListener('input', () => convertWeight());
 inputSpeed1.addEventListener('input', () => convertSpeed());
 inputLength1.addEventListener('input', () => convertLength());
-inputVolume1.addEventListener('input', () => convertVolume())
+inputVolume1.addEventListener('input', () => convertVolume());
